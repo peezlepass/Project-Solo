@@ -5,69 +5,45 @@ const Layout = require("./Layout");
 module.exports = function Register({ messages }) {
   return (
     <Layout>
-      <div className="form p-5">
-        <h1>Register</h1>
-        {messages ? (
-          <div className="alert alert-danger" role="alert">
-            {messages.split(",").map((message) => (
-              <span className="error-message">{message}</span>
-            ))}
-          </div>
-        ) : null}
-        <form method="POST" action="/register">
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text" id="register-name">
-                Name
-              </span>
-            </div>
-            <input
-              type="text"
-              name="name"
-              className="form-control"
-              placeholder="Name"
-              aria-label="Name"
-              aria-describedby="register-name"
-            />
-          </div>
+      <h1>Register</h1>
+      {messages ? (
+        <div>
+          {messages.split(",").map((message) => (
+            <span>{message}</span>
+          ))}
+        </div>
+      ) : null}
+      <form method="POST" action="/register">
+        <span id="register-name">Name</span>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          aria-label="Name"
+          aria-describedby="register-name"
+        />
 
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text" id="register-email">
-                Email address
-              </span>
-            </div>
-            <input
-              type="email"
-              name="email"
-              className="form-control"
-              placeholder="Email"
-              aria-label="Email"
-              aria-describedby="register-email"
-            />
-          </div>
+        <span id="register-email">Email address</span>
 
-          <div className="input-group mb-3">
-            <div className="input-group-prepend">
-              <span className="input-group-text" id="register-password">
-                Password
-              </span>
-            </div>
-            <input
-              type="password"
-              name="password"
-              className="form-control"
-              placeholder="Password"
-              aria-label="Password"
-              aria-describedby="register-password"
-            />
-          </div>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          aria-label="Email"
+          aria-describedby="register-email"
+        />
 
-          <button type="submit" className="btn btn-primary">
-            Register
-          </button>
-        </form>
-      </div>
+        <span id="register-password">Password</span>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          aria-label="Password"
+          aria-describedby="register-password"
+        />
+
+        <button type="submit">Register</button>
+      </form>
     </Layout>
   );
 };
