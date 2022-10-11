@@ -2,7 +2,7 @@ const React = require("react");
 
 module.exports = function Layout({ children, user }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +12,7 @@ module.exports = function Layout({ children, user }) {
         <script src="/js/tailwind.config.js"></script>
         <link rel="stylesheet" href="/css/application.css"></link>
       </head>
-      <body>
+      <body className="bg-night-sky h-full text-white">
         <header>
           <nav>
             <h2 className="text-3xl font-bold underline">
