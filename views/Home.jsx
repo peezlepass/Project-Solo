@@ -3,16 +3,22 @@ const Constellation = require("./Constellation");
 const Layout = require("./Layout");
 const Star = require("./Star");
 
-module.exports = function Home({ user }) {
+module.exports = function Home({ user, horoscopes }) {
   return (
     <Layout user={user}>
       <h1>Hello Solo Project</h1>
-      <div className="flex gap-6 flex-wrap">
+      <div className="flex gap-y-6 flex-wrap justify-evenly">
         <Constellation label="aries" width="300" height="300">
           <Star label="1" y="20" x="10" size="medium" />
           <Star label="2" y="45" x="55" size="big" />
           <Star label="3" y="55" x="75" size="medium" />
           <Star label="4" y="65" x="80" size="small" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "aries")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="taurus" width="300" height="300">
@@ -29,6 +35,12 @@ module.exports = function Home({ user }) {
           <Star label="11" y="68" x="83" size="medium" />
           <Star label="12" y="65" x="57" size="small" />
           <Star label="13" y="75" x="60" size="medium" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "taurus")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="gemini" width="300" height="300">
@@ -40,6 +52,12 @@ module.exports = function Home({ user }) {
           <Star label="6" y="30" x="60" size="medium" />
           <Star label="7" y="38" x="75" size="small" />
           <Star label="8" y="37" x="85" size="small" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "gemini")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="cancer" width="300" height="300">
@@ -48,9 +66,15 @@ module.exports = function Home({ user }) {
           <Star label="3" y="55" x="41" size="big" />
           <Star label="4" y="75" x="25" size="small" />
           <Star label="5" y="80" x="60" size="big" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "cancer")
+                .horoscope
+            }
+          </p>
         </Constellation>
       </div>
-      <div className="flex gap-6 flex-wrap">
+      <div className="flex gap-y-6 flex-wrap justify-evenly">
         <Constellation label="leo" width="300" height="300">
           <Star label="1" y="55" x="10" size="big" />
           <Star label="2" y="40" x="40" size="medium" />
@@ -61,6 +85,9 @@ module.exports = function Home({ user }) {
           <Star label="7" y="60" x="40" size="medium" />
           <Star label="8" y="75" x="75" size="big" />
           <Star label="9" y="47" x="73" size="medium" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {horoscopes.find((horoscope) => horoscope.sign === "leo").horoscope}
+          </p>
         </Constellation>
 
         <Constellation label="virgo" width="300" height="300">
@@ -73,6 +100,12 @@ module.exports = function Home({ user }) {
           <Star label="7" y="60" x="75" size="small" />
           <Star label="8" y="50" x="85" size="medium" />
           <Star label="9" y="35" x="90" size="small" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "virgo")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="libra" width="300" height="300">
@@ -80,6 +113,12 @@ module.exports = function Home({ user }) {
           <Star label="2" y="10" x="48" size="big" />
           <Star label="3" y="25" x="75" size="big" />
           <Star label="4" y="65" x="65" size="medium" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "libra")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="scorpio" width="300" height="300">
@@ -96,9 +135,15 @@ module.exports = function Home({ user }) {
           <Star label="11" y="12" x="78" size="medium" />
           <Star label="12" y="16" x="83" size="medium" />
           <Star label="13" y="22" x="89" size="medium" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "scorpio")
+                .horoscope
+            }
+          </p>
         </Constellation>
       </div>
-      <div className="flex gap-6 flex-wrap">
+      <div className="flex gap-y-6 flex-wrap justify-evenly">
         <Constellation label="sagittarius" width="300" height="300">
           <Star label="1" y="10" x="30" size="small" />
           <Star label="2" y="20" x="25" size="small" />
@@ -111,6 +156,12 @@ module.exports = function Home({ user }) {
           <Star label="9" y="60" x="80" size="small" />
           <Star label="10" y="75" x="75" size="big" />
           <Star label="11" y="85" x="85" size="small" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "sagittarius")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="capricorn" width="300" height="300">
@@ -124,6 +175,12 @@ module.exports = function Home({ user }) {
           <Star label="8" y="55" x="75" size="small" />
           <Star label="9" y="30" x="78" size="big" />
           <Star label="10" y="15" x="85" size="medium" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "capricorn")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
         <Constellation label="aquarius" width="300" height="300">
@@ -137,9 +194,15 @@ module.exports = function Home({ user }) {
           <Star label="8" y="25" x="50" size="big" />
           <Star label="9" y="40" x="67" size="big" />
           <Star label="10" y="53" x="87" size="medium" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "aquarius")
+                .horoscope
+            }
+          </p>
         </Constellation>
 
-        <Constellation label="pieces" width="300" height="300">
+        <Constellation label="pisces" width="300" height="300">
           <Star label="1" y="5" x="40" size="small" />
           <Star label="2" y="10" x="35" size="small" />
           <Star label="3" y="15" x="38" size="small" />
@@ -158,6 +221,12 @@ module.exports = function Home({ user }) {
           <Star label="16" y="66" x="53" size="small" />
           <Star label="17" y="64" x="49" size="small" />
           <Star label="18" y="62" x="62" size="small" />
+          <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {
+              horoscopes.find((horoscope) => horoscope.sign === "pisces")
+                .horoscope
+            }
+          </p>
         </Constellation>
       </div>
     </Layout>

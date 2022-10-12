@@ -1,5 +1,7 @@
 const React = require("react");
 
+const BackgroundStars = require("./BackgroundStars");
+
 module.exports = function Layout({ children, user }) {
   return (
     <html lang="en" className="h-full">
@@ -32,6 +34,7 @@ module.exports = function Layout({ children, user }) {
           </nav>
         </header>
 
+        <BackgroundStars></BackgroundStars>
         <main>{children}</main>
         <script src="/js/application.js"></script>
       </body>

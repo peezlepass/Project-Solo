@@ -1,0 +1,31 @@
+const React = require("react");
+module.exports = function BackgroundStars({}) {
+  let stars = [];
+  for (let i = 0; i < 500; i++) {
+    stars.push({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      scale: Math.random() * 0.6,
+      opacity: Math.random(),
+      rotation: Math.random() * 360,
+      delay: Math.random() * 2,
+    });
+  }
+  return stars.map(({ x, y, scale, opacity, rotation, delay }, index) => {
+    return (
+      <span
+        key={index}
+        className="star-container"
+        style={{ left: x + "%", top: y + "%", animationDelay: delay + "s" }}
+      >
+        <span
+          className="star"
+          style={{
+            transform: `scale(${scale}) rotate(${rotation}deg)`,
+            opacity,
+          }}
+        />
+      </span>
+    );
+  });
+};

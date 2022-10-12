@@ -1,3 +1,35 @@
-.error-message {
+.star {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
   display: block;
+  box-shadow: 0.5px 0px 2px 1px white, -0.5px -0.5px 2px 1px white,
+    0.5px 0 2px 1px white;
+}
+
+.star-container {
+  position: absolute;
+  animation-duration: 2s;
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 1;
+  }
+
+  /* 90% {
+    opacity: 1;
+  } */
+
+  50% {
+    opacity: 0.2;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

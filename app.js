@@ -8,6 +8,7 @@ const Home = require("./views/Home");
 const path = require("path");
 const authentication = require("./routes/authentication");
 const { User } = require("./db/models");
+const { getHoroscopeForSign, signs } = require("./lib/horoscope");
 
 const app = express();
 
@@ -38,7 +39,15 @@ app.get("/", async (req, res) => {
   const user = req.session?.userId
     ? await User.findOne({ where: { id: req.session?.userId } })
     : null;
-  renderTemplate(Home, { user }, res);
+
+  //I will receive an array of horoscopes
+  const horoscopes = await Promise.all(
+    signs.map((sign) => {
+      return getHoroscopeForSign(sign);
+    })
+  );
+
+  renderTemplate(Home, { user, horoscopes }, res);
 });
 
 app.listen(PORT, () => console.log(`Сервер поднят на ${PORT} порту!`));
