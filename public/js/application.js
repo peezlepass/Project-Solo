@@ -20,3 +20,16 @@ for (let i = 0; i < contents.length; i++) {
     }
   });
 }
+
+const bgMusic = new Audio("/audio/music.mp3");
+const playButton = document.querySelector(".musicButton");
+playButton.addEventListener("click", (event) => {
+  if (bgMusic.paused) {
+    bgMusic.currentTime = 74;
+    bgMusic.play();
+    playButton.innerHTML = "Pause me";
+  } else {
+    bgMusic.pause();
+    playButton.innerHTML = "Play me";
+  }
+});

@@ -8,17 +8,12 @@ module.exports = function Constellation({
   label,
 }) {
   const shortHoroscope = horoscope.split(".").slice(0, 2).join(".") + ".";
-  const variance = 200;
-  const yOffset = Math.round(Math.random() * variance - variance / 2);
-  const xOffset = Math.round(Math.random() * variance - variance / 2);
   return (
     <div
       className="relative group overflow-y-scroll constellation"
       style={{
         width: `${width}px`,
         height: `${height}px`,
-        top: `${yOffset}px`,
-        left: `${xOffset}px`,
       }}
     >
       {children}
