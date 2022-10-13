@@ -54,6 +54,11 @@ module.exports = function Layout({ children, user }) {
 
         <BackgroundStars></BackgroundStars>
         <main className="min-h-full-body relative z-10">{children}</main>
+        <script
+          type="text/javascript"
+          async
+          src="https://platform.twitter.com/widgets.js"
+        ></script>
         <script src="/js/application.js"></script>
       </body>
     </html>

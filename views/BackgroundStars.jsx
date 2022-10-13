@@ -1,7 +1,7 @@
 const React = require("react");
 module.exports = function BackgroundStars({}) {
   let stars = [];
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 1000; i++) {
     stars.push({
       x: Math.random() * 100,
       y: Math.random() * 100,
