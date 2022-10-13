@@ -11,21 +11,25 @@ module.exports = function BackgroundStars({}) {
       delay: Math.random() * 2,
     });
   }
-  return stars.map(({ x, y, scale, opacity, rotation, delay }, index) => {
-    return (
-      <span
-        key={index}
-        className="star-container"
-        style={{ left: x + "%", top: y + "%", animationDelay: delay + "s" }}
-      >
-        <span
-          className="star"
-          style={{
-            transform: `scale(${scale}) rotate(${rotation}deg)`,
-            opacity,
-          }}
-        />
-      </span>
-    );
-  });
+  return (
+    <div>
+      {stars.map(({ x, y, scale, opacity, rotation, delay }, index) => {
+        return (
+          <span
+            key={index}
+            className="star-container"
+            style={{ left: x + "%", top: y + "%", animationDelay: delay + "s" }}
+          >
+            <span
+              className="star"
+              style={{
+                transform: `scale(${scale}) rotate(${rotation}deg)`,
+                opacity,
+              }}
+            />
+          </span>
+        );
+      })}
+    </div>
+  );
 };

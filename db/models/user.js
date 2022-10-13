@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         validate: {
           notEmpty: {
-            msg: "You must provide a name.",
+            msg: "Provide a name.",
           },
         },
       },
@@ -25,11 +25,43 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         validate: {
           isEmail: {
-            msg: "You must provide a valid email.",
+            msg: "Provide a valid email.",
           },
         },
       },
       password: DataTypes.STRING,
+      lat: DataTypes.DECIMAL,
+      lng: DataTypes.DECIMAL,
+      date: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isInt: true,
+          min: 1,
+          notEmpty: {
+            msg: "Provide a day.",
+          },
+          isDayOfMonth(value) {
+            if ([4, 6, 9, 11].includes(+this.month) && +value > 30) {
+              throw new Error("Incorrect date.");
+            } else if (+this.month === 2 && +value > 29) {
+              throw new Error("Incorrect date.");
+            } else if (+value > 31) {
+              throw new Error("Incorrect date.");
+            }
+          },
+        },
+      },
+      month: {
+        type: DataTypes.INTEGER,
+        validate: {
+          isInt: true,
+          min: 1,
+          max: 12,
+          notEmpty: {
+            msg: "Provide a month.",
+          },
+        },
+      },
     },
     {
       sequelize,

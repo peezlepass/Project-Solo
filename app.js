@@ -8,7 +8,11 @@ const Home = require("./views/Home");
 const path = require("path");
 const authentication = require("./routes/authentication");
 const { User } = require("./db/models");
-const { getHoroscopeForSign, signs } = require("./lib/horoscope");
+const {
+  getHoroscopeForSign,
+  signs,
+  determineSign,
+} = require("./lib/horoscope");
 
 const app = express();
 

@@ -6,7 +6,6 @@ const Star = require("./Star");
 module.exports = function Home({ user, horoscopes }) {
   return (
     <Layout user={user}>
-      <h1>Hello Solo Project</h1>
       <div className="flex gap-y-6 flex-wrap justify-evenly">
         <Constellation label="aries" width="300" height="300">
           <Star label="1" y="20" x="10" size="medium" />
@@ -14,6 +13,18 @@ module.exports = function Home({ user, horoscopes }) {
           <Star label="3" y="55" x="75" size="medium" />
           <Star label="4" y="65" x="80" size="small" />
           <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <script
+              type="text/javascript"
+              async
+              src="https://platform.twitter.com/widgets.js"
+            ></script>
+            <a
+              class="twitter-share-button"
+              href="https://twitter.com/intent/tweet"
+              data-size="large"
+            >
+              Tweet
+            </a>
             {
               horoscopes.find((horoscope) => horoscope.sign === "aries")
                 .horoscope

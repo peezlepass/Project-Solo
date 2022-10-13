@@ -17,7 +17,8 @@ router.get("/register", (req, res) => {
 router.post("/register", async (req, res) => {
   // Делаю try/catch чтобы отловить ошибки и потом их использовать
   console.log(req.body);
-  const { name, email, password } = req.body;
+  const { name, dob, email, password } = req.body;
+  const [date, month] = dob.split("-");
 
   // Проблема: по логике вещей должна быть ошибка, если пароль, к примеру, слишком короткий
   // Однако bcrypt все равно будет хешировать даже пустое поле
@@ -31,7 +32,7 @@ router.post("/register", async (req, res) => {
       // Пытаюсь имитировать ошибку секвалайза
       passwordError.errors = [
         {
-          message: "Your password should be at least 8 symbols long.",
+          message: "Password min 8 symbols.",
           path: "password",
         },
       ];
@@ -41,6 +42,8 @@ router.post("/register", async (req, res) => {
     // Ошибки пароля не выловить - из-за бикрипта
     const user = await User.create({
       name,
+      date,
+      month,
       email,
       password: hash,
     });
@@ -56,7 +59,21 @@ router.post("/register", async (req, res) => {
       res.redirect("/");
     });
   } catch (error) {
+    console.log(error);
     let messages = [];
+    let foundDobError = false;
+    error.errors = error.errors.filter((error) => {
+      if (error.path === "date" || error.path === "month") {
+        foundDobError = true;
+        return false;
+      } else {
+        return true;
+      }
+    });
+
+    if (foundDobError) {
+      error.errors.push(new Error("DOB format: DD-MM."));
+    }
 
     // scenario 1 - only sequelize errors - только ошибки секвалайза (имя и имейл)
     if (passwordError === null) {
@@ -88,14 +105,14 @@ router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ where: { email } });
     if (!user) {
-      throw new Error("No user found for that email and password.");
+      throw new Error("No user found.");
     }
     const passCheck = await bcrypt.compare(password, user.password);
     if (passCheck) {
       req.session.userId = user.id;
       res.redirect("/");
     } else {
-      throw new Error("No user found for that email and password.");
+      throw new Error("No user found.");
     }
   } catch (error) {
     res.redirect(`/login?messages=${error.message}`);
