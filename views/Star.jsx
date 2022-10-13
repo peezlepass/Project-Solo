@@ -1,17 +1,20 @@
 const React = require("react");
 
-const sizeMap = {
-  big: "w-4 h-4",
-  medium: "w-2 h-2",
-  small: "w-1 h-1",
+const sizeColorMap = {
+  big: "700",
+  medium: "400",
+  small: "200",
 };
 
-module.exports = function Star({ size = "big", x, y }) {
-  let sizeClass = sizeMap[size];
+module.exports = function Star({ size = "big", x, y, color }) {
+  const colorClass = `${color}-${sizeColorMap[size]}`;
   return (
     <span
-      className={`absolute bg-white block rounded-full ${sizeClass}`}
-      style={{ left: `${x}%`, top: `${y}%` }}
+      className={`four-pointed-star after:transition-all before:transition-all transition-all duration-500 after:duration-500 before:duration-500 blur-xs ${size} group-hover:before:bg-${colorClass} group-hover:after:bg-${colorClass} group-hover:blur-none`}
+      style={{
+        left: `${x}%`,
+        top: `${y}%`,
+      }}
     ></span>
   );
 };

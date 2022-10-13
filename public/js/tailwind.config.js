@@ -12,6 +12,9 @@ tailwind.config = {
       height: {
         "full-body": "calc(100vh - 100px)",
       },
+      blur: {
+        xs: "2px",
+      },
     },
   },
 };
