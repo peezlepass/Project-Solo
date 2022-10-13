@@ -8,11 +8,11 @@ module.exports = function Constellation({
 }) {
   return (
     <div
-      className="relative group overflow-y-scroll"
+      className="relative group overflow-y-scroll constellation"
       style={{ width: `${width}px`, height: `${height}px` }}
     >
       {children}
-      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm">
+      <div className="opacity-0 transition-opacity duration-300 text-sm constellation-content">
         <a
           className="twitter-share-button"
           href={`https://twitter.com/intent/tweet?text=${horoscope}`}
