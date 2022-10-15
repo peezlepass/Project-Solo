@@ -25,12 +25,13 @@ Now visit http://localhost:3000/ to see your horoscope for the day.
 ## How to use
 
 Register an account, providing your name, email, password and date of birth.
+
 Hover over some constellations on the main page to see them animate and click on them to read a horoscope and share it.
+
 You can also push a play button to enjoy some colourful animation.
 
 ## Tools used
-API
-https://ohmanda.com/api/horoscope/
 
-Style
-https://tailwindcss.com
+I used the [unofficial astrlogy.com API](https://ohmanda.com/api/horoscope/) for horoscope data. 
+
+Technology-wise it is a Node app running Express and React, Tailwind for styling and Sequelize/Postgres for database.
