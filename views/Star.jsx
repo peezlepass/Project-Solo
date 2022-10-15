@@ -1,9 +1,9 @@
 const React = require("react");
 
 const sizeColorMap = {
-  big: "700",
-  medium: "400",
-  small: "200",
+  big: "400",
+  medium: "600",
+  small: "700",
 };
 
 module.exports = function Star({ size = "big", x, y, color }) {

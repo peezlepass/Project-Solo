@@ -24,7 +24,7 @@ module.exports = function Layout({ children, user }) {
             <div className="flex gap-x-4 text-xl">
               {user ? (
                 <>
-                  <button className="musicButton bg-white text-black block px-2 rounded">
+                  <button className="constellationButton bg-white text-black block px-2 rounded">
                     Play me
                   </button>
                   <span className="text-bold">Hi {determineSign(user)}</span>

@@ -22,14 +22,24 @@ for (let i = 0; i < contents.length; i++) {
 }
 
 const bgMusic = new Audio("/audio/music.mp3");
-const playButton = document.querySelector(".musicButton");
-playButton.addEventListener("click", (event) => {
-  if (bgMusic.paused) {
+const constellationButton = document.querySelector(".constellationButton");
+constellationButton.addEventListener("click", (event) => {
+  if (constellationButton.innerHTML === "Play me") {
     bgMusic.currentTime = 74;
     bgMusic.play();
-    playButton.innerHTML = "Pause me";
+    const constellations = document.querySelectorAll(".constellation");
+    for (let i = 0; i < constellations.length; i++) {
+      const constellation = constellations[i];
+      constellation.classList.add("star-dance");
+    }
+    constellationButton.innerHTML = "Pause me";
   } else {
     bgMusic.pause();
-    playButton.innerHTML = "Play me";
+    const constellations = document.querySelectorAll(".constellation");
+    for (let i = 0; i < constellations.length; i++) {
+      const constellation = constellations[i];
+      constellation.classList.remove("star-dance");
+    }
+    constellationButton.innerHTML = "Play me";
   }
 });
