@@ -39,10 +39,15 @@ After you enter, the system will greet you with your horoscope sign.
 Now you may see all the constellation on the page. At first they will be blurry, waiting for you to hover your cursor over them. As you do this, the constellation will animate. Each one with their own colour.
 
 <p align="center">
-  <img width="640" alt="Gif1" src="https://user-images.githubusercontent.com/104982744/216817778-bf7639d5-4901-4387-8ad5-4b6c8c3f8250.gif">
+  <img width="640" alt="Gif1" src="https://user-images.githubusercontent.com/104982744/216818323-a71c97ae-8f11-4386-b81b-282fc597f942.gif">
 </p>
 
 You can click on the constellation to reveal the daily horoscope for this star sign, as well as share this text on Twitter.
+
+<p align="center">
+  <img width="640" alt="Gif2" src="https://user-images.githubusercontent.com/104982744/216818761-c5f48e8c-c0a0-4157-a8bc-d6e84548c350.gif">
+</p>
+
 
 And for the final part: Click on “Play me”! Enjoy some animated star dancing backed by some cool music!
 
