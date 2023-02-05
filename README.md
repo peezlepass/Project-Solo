@@ -24,11 +24,19 @@ Now visit http://localhost:3000/ to see your horoscope for the day.
 
 ## How to use
 
-Register an account, providing your name, email, password and date of birth.
+First thing you will want to do is register a user to see all the fun stuff!
 
-Hover over some constellations on the main page to see them animate and click on them to read a horoscope and share it.
+Simply enter any name, birthday in the format DD-MM, email and a password. Make sure the password is at least 8 characters long, otherwise Sequelize will stop you from continuing.
 
-You can also push a play button to enjoy some colourful animation.
+Be real and don’t put impossible dates, like the 30th of February. If you do, the system will alert you in pink.
+
+After you enter, the system will greet you with your horoscope sign.
+
+Now you may see all the constellation on the page. At first they will be blurry, waiting for you to hover your cursor over them. As you do this, the constellation will animate. Each one with their own colour.
+
+You can click on the constellation to reveal the daily horoscope for this star sign, as well as share this text on Twitter.
+
+And for the final part: Click on “Play me”! Enjoy some animated star dancing backed by some cool music!
 
 ## Tools used
 
