@@ -45,11 +45,14 @@ Now you may see all the constellation on the page. At first they will be blurry,
 You can click on the constellation to reveal the daily horoscope for this star sign, as well as share this text on Twitter.
 
 <p align="center">
-  <img width="640" alt="Gif2" src="https://user-images.githubusercontent.com/104982744/216819219-3198041d-bad7-417c-80f4-002b3c695047.gif">
+  <img width="640" alt="Gif2" src="https://user-images.githubusercontent.com/104982744/216819435-885f0812-e494-4d9d-98c6-03cb77a7dfd0.gif">
 </p>
 
-
 And for the final part: Click on “Play me”! Enjoy some animated star dancing backed by some cool music!
+
+<p align="center">
+  <img width="640" alt="Gif3" src="https://user-images.githubusercontent.com/104982744/216819435-885f0812-e494-4d9d-98c6-03cb77a7dfd0.gif">
+</p>
 
 ## Tools used
 
