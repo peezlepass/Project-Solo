@@ -45,7 +45,7 @@ Now you may see all the constellation on the page. At first they will be blurry,
 You can click on the constellation to reveal the daily horoscope for this star sign, as well as share this text on Twitter.
 
 <p align="center">
-  <img width="640" alt="Gif2" src="https://user-images.githubusercontent.com/104982744/216818761-c5f48e8c-c0a0-4157-a8bc-d6e84548c350.gif">
+  <img width="640" alt="Gif2" src="https://user-images.githubusercontent.com/104982744/216819219-3198041d-bad7-417c-80f4-002b3c695047.gif">
 </p>
 
 
