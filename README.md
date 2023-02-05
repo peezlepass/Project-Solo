@@ -28,6 +28,10 @@ First thing you will want to do is register a user to see all the fun stuff!
 
 Simply enter any name, birthday in the format DD-MM, email and a password. Make sure the password is at least 8 characters long, otherwise Sequelize will stop you from continuing.
 
+<p align="center">
+<img width="640" alt="Screenshot1" src="https://user-images.githubusercontent.com/104982744/216817537-6d9c0fb6-cd84-4255-91e0-4292924f3ac1.png">
+</p>
+
 Be real and don’t put impossible dates, like the 30th of February. If you do, the system will alert you in pink.
 
 After you enter, the system will greet you with your horoscope sign.
