@@ -51,7 +51,7 @@ You can click on the constellation to reveal the daily horoscope for this star s
 And for the final part: Click on “Play me”! Enjoy some animated star dancing backed by some cool music!
 
 <p align="center">
-  <img width="640" alt="Gif3" src="https://user-images.githubusercontent.com/104982744/216819435-885f0812-e494-4d9d-98c6-03cb77a7dfd0.gif">
+  <img width="640" alt="Gif3" src="https://user-images.githubusercontent.com/104982744/216819436-bf4a7701-802a-439a-93fd-f9832502f16f.gif">
 </p>
 
 ## Tools used
