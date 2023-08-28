@@ -1,6 +1,7 @@
 # Project Solo
 
-Project Solo is a web app for viewing your daily horoscope with the ability to share them via Twitter and enjoy a fun visualisation.
+Project Solo is a web app for viewing your daily horoscope with the ability to share them via Twitter and enjoy a fun visualisation. 
+Visit the deployed version here: https://peezlepass.com/project-solo
 
 ## Running locally
 
