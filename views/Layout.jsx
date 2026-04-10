@@ -5,31 +5,30 @@ const { determineSign } = require("../lib/horoscope");
 
 module.exports = function Layout({ children, user }) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="antialiased">
       <head>
         <meta charSet="UTF-8" />
+
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Solo Project</title>
+        <title>Project Solo</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="/js/tailwind.config.js"></script>
-        <link rel="stylesheet" href="/css/application.css"></link>
+        <script src="/project-solo/js/tailwind.config.js"></script>
+        <link rel="stylesheet" href="/project-solo/css/application.css"></link>
       </head>
-      <body className="bg-night-sky h-full text-white">
-        <header className="max-w-7xl mx-auto py-8">
+      <body className="bg-mauve min-h-full text-white">
+        <div className="fixed inset-0 bg-night-sky z-1"></div>
+        <header className="max-w-7xl mx-auto py-8 relative z-10">
           <nav className="flex justify-between items-end">
             <h2 className="text-3xl font-bold tracking-tighter">
-              <a href="/">Project Solo</a>
+              <a href="/project-solo">Project Solo</a>
             </h2>
             <div className="flex gap-x-4 text-xl">
               {user ? (
                 <>
-                  <button className="constellationButton bg-white text-black block px-2 rounded">
-                    Play me
-                  </button>
                   <span className="text-bold">Hi {determineSign(user)}</span>
                   <a
-                    href="/logout"
+                    href="/project-solo/logout"
                     className="transition-color duration-300 hover:text-sky-400"
                   >
                     Logout
@@ -38,13 +37,13 @@ module.exports = function Layout({ children, user }) {
               ) : (
                 <>
                   <a
-                    href="/register"
+                    href="/project-solo/register"
                     className="transition-color duration-300 hover:text-sky-400"
                   >
                     Register
                   </a>
                   <a
-                    href="/login"
+                    href="/project-solo/login"
                     className="transition-color duration-300 hover:text-sky-400"
                   >
                     Login
@@ -56,13 +55,13 @@ module.exports = function Layout({ children, user }) {
         </header>
 
         <BackgroundStars></BackgroundStars>
-        <main className="min-h-full-body relative z-10">{children}</main>
+        <main className="relative z-10">{children}</main>
         <script
           type="text/javascript"
           async
           src="https://platform.twitter.com/widgets.js"
         ></script>
-        <script src="/js/application.js"></script>
+        <script src="/project-solo/js/application.js"></script>
       </body>
     </html>
   );

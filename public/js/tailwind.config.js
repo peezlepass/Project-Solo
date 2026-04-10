@@ -1,5 +1,10 @@
 tailwind.config = {
   theme: {
+    screens: {
+      phone: {
+        max: "768px",
+      },
+    },
     extend: {
       backgroundImage: {
         // https://codepen.io/billyysea/pen/nLroLY
@@ -12,9 +17,15 @@ tailwind.config = {
       height: {
         "full-body": "calc(100vh - 100px)",
       },
+      width: {
+        "100": "26rem"
+      },
       blur: {
         xs: "2px",
       },
+      colors: {
+        "mauve": "rgb(104, 86, 102)"
+      }
     },
   },
 };

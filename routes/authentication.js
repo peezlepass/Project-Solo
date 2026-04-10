@@ -56,7 +56,7 @@ router.post("/register", async (req, res) => {
 
     req.session.userId = user.id;
     req.session.save(() => {
-      res.redirect("/");
+      res.redirect("/project-solo");
     });
   } catch (error) {
     console.log(error);
@@ -89,7 +89,7 @@ router.post("/register", async (req, res) => {
     }
     // error = {errors:[{message, path},{message, path}, ...]}
     // Получаю messages из всех ошибок, которые могут возникнуть при валидации
-    res.redirect(`/register?messages=${messages.join(",")}`);
+    res.redirect(`/project-solo/register?messages=${messages.join(",")}`);
   }
 });
 
@@ -110,19 +110,19 @@ router.post("/login", async (req, res) => {
     const passCheck = await bcrypt.compare(password, user.password);
     if (passCheck) {
       req.session.userId = user.id;
-      res.redirect("/");
+      res.redirect("/project-solo");
     } else {
       throw new Error("No user found.");
     }
   } catch (error) {
-    res.redirect(`/login?messages=${error.message}`);
+    res.redirect(`/project-solo/login?messages=${error.message}`);
   }
 });
 
 router.get("/logout", async (req, res) => {
   req.session.destroy(() => {
     res.clearCookie("kebab");
-    res.redirect("/login");
+    res.redirect("/project-solo/login");
   });
 });
 

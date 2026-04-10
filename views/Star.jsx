@@ -6,11 +6,11 @@ const sizeColorMap = {
   small: "700",
 };
 
-module.exports = function Star({ size = "big", x, y, color }) {
+module.exports = function Star({ size = "big", x, y, color, blur = "blur-xs" }) {
   const colorClass = `${color}-${sizeColorMap[size]}`;
   return (
     <span
-      className={`four-pointed-star after:transition-all before:transition-all transition-all duration-500 after:duration-500 before:duration-500 blur-xs ${size} group-hover:before:bg-${colorClass} group-hover:after:bg-${colorClass} group-hover:blur-none`}
+      className={`four-pointed-star after:transition-all before:transition-all transition-all duration-500 after:duration-500 before:duration-500 ${blur} ${size} group-hover:before:bg-${colorClass} group-hover:after:bg-${colorClass} group-hover:blur-none`}
       style={{
         left: `${x}%`,
         top: `${y}%`,

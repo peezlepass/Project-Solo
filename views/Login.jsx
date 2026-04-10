@@ -7,7 +7,7 @@ module.exports = function Login({ messages }) {
       <div className="flex items-center justify-center h-full-body">
         <form
           method="POST"
-          action="/login"
+          action="/project-solo/login"
           className="flex flex-col gap-y-6 text-xl"
         >
           {messages ? (

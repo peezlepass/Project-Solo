@@ -16,7 +16,7 @@ const {
 
 const app = express();
 
-const PORT = process.env.PORT ?? 7777;
+const PORT = process.env.PORT || 7777;
 const { SESSION_SECRET } = process.env;
 
 const sessionConfig = {
@@ -40,8 +40,8 @@ app.use(session(sessionConfig));
 app.use("/", authentication);
 
 app.get("/", async (req, res) => {
-  const user = req.session?.userId
-    ? await User.findOne({ where: { id: req.session?.userId } })
+  const user = (req.session && req.session.userId)
+    ? await User.findOne({ where: { id: req.session.userId } })
     : null;
 
   //I will receive an array of horoscopes

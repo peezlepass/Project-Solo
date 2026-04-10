@@ -8,7 +8,7 @@ module.exports = function Register({ messages }) {
       <div className="flex items-center justify-center h-full-body">
         <form
           method="POST"
-          action="/register"
+          action="/project-solo/register"
           className="flex flex-col gap-y-6 text-xl"
         >
           {messages ? (
