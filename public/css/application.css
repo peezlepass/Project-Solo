@@ -83,6 +83,15 @@
   filter: blur(0px);
 }
 
+/* Hide scrollbars on constellation boxes (ugly on Windows) while keeping scroll */
+.constellation {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.constellation::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .star-dance .four-pointed-star:after,
 .star-dance .four-pointed-star:before {
   background-color: rgb(221, 215, 46);
